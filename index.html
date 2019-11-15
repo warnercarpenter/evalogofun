@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="particlesContainer" id="particles-js"></div>
+    <div class="logoContainer">
+        <div style="display: inline-block" id="darkmode">
+                <img id="whitelogo" src="logofunwhite.png" class="hidden" height="100px">
+                <img id="blacklogo" src="logofun.png" height="100px">
+        </div>
+    </div>
+    <script src="particles.js"></script>
+    <script>
+    particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});
+
+    document.getElementById("darkmode").addEventListener("click", function() {
+        darkMode()
+    })
+
+    function darkMode() {
+        document.getElementById("whitelogo").classList.toggle("hidden")
+        document.getElementById("blacklogo").classList.toggle("hidden")
+        document.body.classList.toggle("blackbg")
+    }
+    </script>
+</body>
+</html>
